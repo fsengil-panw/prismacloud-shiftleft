@@ -8,9 +8,6 @@ resource "azurerm_managed_disk" "disk" {
   encryption_settings {
     enabled = false
   }
-  tags = {
-    yor_trace = "b2ad49ce-c088-4e42-9e03-174d83fcfad4"
-  }
 }
 
 resource "azurerm_storage_account" "storage" {
@@ -40,9 +37,7 @@ resource "azurerm_storage_account" "storage" {
       retention_policy_days = 10
     }
   }
-  tags = {
-    yor_trace = "1bd1545f-55fc-4f59-9185-ac5d5f373596"
-  }
+  enable_https_traffic_only = true
 }
 
 resource "azurerm_storage_account_network_rules" "rule" {
